@@ -1,0 +1,1250 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("fontawesome-free-6.5.1-web/css/all.min.css");
+
+:root {
+  --basic-blue: #496ac9;
+  --blue: #0a3edd;
+  --second-blue: #a3baff;
+  --third-blue: #496ac95e;
+  --title-backgraund: rgba(73, 106, 201, 0.4);
+  --dark-grey: #323639;
+  --second-grey: #f2f2f2;
+  --footer-text: #c1c2c4;
+  --white: #ffffff;
+  --black: #000000;
+  --red: #d01e55;
+  --purple: #6a4aa1;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+body,
+input,
+textarea,
+select {
+  font-family: "Montserrat", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.container {
+  max-width: 1170px;
+  width: 94%;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  color: var(--basic-blue);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--blue);
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+h1,
+h2 {
+  font-family: "Lobster", sans-serif;
+}
+
+h2 {
+  font-size: 2.6em;
+  line-height: 1em;
+  color: var(--basic-blue);
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.6em;
+  line-height: 1.3em;
+}
+
+#contact_form h3 {
+  font-size: 2em;
+  line-height: 1.3em;
+}
+
+#footer h3 {
+  font-size: 1.4em;
+  line-height: 1.3em;
+}
+
+h4 {
+  font-size: 0.8em;
+}
+
+.bigLetter {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+.floatRight {
+  float: right;
+}
+
+aside {
+  margin: 0 5%;
+}
+
+figure {
+  margin: 0px;
+}
+
+/* Skip to Main Content */
+a.button.skip {
+  position: absolute;
+  top: -400px;
+  left: 50%;
+  z-index: 100;
+  outline: 2px solid var(--white);
+  color: white;
+  background: var(--basic-blue);
+  text-transform: uppercase;
+  padding: 20px 40px;
+  margin-left: -130px;
+}
+
+a.button.skip:focus {
+  top: 50vh;
+}
+
+/* navigation */
+header nav ul,
+header nav #drop {
+  display: none;
+  text-align: center;
+}
+
+header nav #drop:checked ~ ul {
+  display: block;
+  clear: both;
+  margin: 0;
+  position: absolute;
+  top: 58px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 85px);
+  background: rgb(103 103 103 / 55%);
+  overflow: hidden;
+  height: 100vh;
+}
+
+header nav li a {
+  display: block;
+  padding: 1em 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+header nav li:last-child {
+  padding-right: 0;
+}
+
+header #hamburguesa {
+  user-select: none;
+  cursor: pointer;
+  float: right;
+}
+
+header #hamburguesa:after {
+  font-size: 2.2em;
+  content: "\2630";
+  line-height: 1.3em;
+  color: var(--white);
+}
+
+header nav #drop:checked ~ #hamburguesa:after {
+  content: "\2715";
+}
+
+@media (min-width: 993px) {
+  header #hamburguesa,
+  header #drop {
+    display: none;
+  }
+
+  header nav ul {
+    display: flex;
+  }
+
+  header nav li {
+    padding: 0 0.5rem;
+  }
+
+  header button {
+    display: none;
+  }
+}
+
+/********************* BUTTON  ****************/
+
+.button {
+  background: var(--white);
+  color: rgb(151, 82, 82);
+  border: 2px solid rgb(200, 157, 157);
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--white);
+}
+
+.button:focus {
+  background: var(--blue);
+}
+
+.button::after {
+  content: "";
+  background: brown;
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+  transition: all 0.3s ease;
+}
+
+.button:hover::after {
+  transition: all 0.3s ease-out;
+  transform: scale(1, 1);
+}
+
+.button.active {
+  color: var(--white);
+  background-color: rgb(169, 34, 34);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 1rem 1.6rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .button {
+    padding: 1rem 1.6rem;
+  }
+}
+
+/*  social nav*/
+
+nav#socialNavBar {
+  position: fixed;
+  display: flex;
+  margin-left: 5%;
+  background-color: rgb(151, 82, 82, 0.4);
+  border-radius: 10px;
+  padding: 5px 5px 12px 5px;
+  margin-top: 54px;
+}
+
+header nav#socialNavBar ul {
+  display: block;
+}
+
+nav#socialNavBar .faico {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav#socialNavBar .faico li {
+  display: inline-block;
+  margin: 8px 5px 0 5px;
+  padding: 0;
+  line-height: normal;
+}
+
+nav#socialNavBar .faico a {
+  color: var(--white);
+  border-radius: 50%;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 1.3em;
+  transition: none;
+}
+
+nav#socialNavBar .faico a:hover,
+nav#socialNavBar .faico a:focus {
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.fa-brands::before {
+  transition: none;
+}
+
+nav#socialNavBar .faicon-facebook {
+  background-color: #3b5998;
+}
+
+nav#socialNavBar .faicon-instagram {
+  background: #e1306c;
+}
+
+nav#socialNavBar .faicon-twitter {
+  background-color: #00acee;
+}
+
+nav#socialNavBar .faicon-tiktok {
+  background-color: #111111;
+}
+
+nav#socialNavBar .faicon-linkedin {
+  background-color: #0e76a8;
+}
+
+@media (min-width: 768px) {
+  header nav#socialNavBar ul {
+    display: inline-flex;
+  }
+
+  nav#socialNavBar {
+    margin-top: 0px;
+  }
+}
+
+/*************** header *************/
+
+#header h1 {
+  font-size: 1.6em;
+  line-height: 1.6em;
+}
+
+#header .image-backgraund {
+  background: var(--basic-blue);
+  background-image: url(../images/barba-tijera.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-size: 100%;
+  margin-top: 3.5em;
+  height: 13em;
+}
+
+#header .navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: 1rem 0 0 0;
+  border-bottom: 1px solid brown;
+  background: rgb(151, 82, 82);
+}
+
+#header .navbar-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .logo {
+  width: 80px;
+  height: auto;
+  float: left;
+  padding: 10px;
+}
+
+#header p {
+  margin: 0;
+  padding: 1rem;
+  font-size: 3rem;
+  font-family: "Lobster", sans-serif;
+  color: var(--white);
+}
+
+.page-title {
+  text-align: right;
+}
+
+.page-banner {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-title {
+  background-color: rgb(151, 82, 82, 0.4);
+  max-width: 480px;
+  padding: 2rem 2rem 2rem 1rem;
+}
+
+/************  ***************/
+#header .image-backgraund-int {
+  background: var(--basic-blue);
+  background-image: url(../images/cabecera_int.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-size: 100%;
+  margin-top: 3.5em;
+  height: 13em;
+}
+
+#header .banner-title-int h1 {
+  font-size: 3rem;
+  line-height: 1.3em;
+  padding-top: 3.2em;
+}
+
+#header .banner-title-int .logo {
+  width: 60px;
+  padding: 0 10px;
+}
+
+.image-backgraund-int nav#socialNavBar {
+  margin-top: 150px;
+}
+
+@media (min-width: 768px) {
+  #header .image-backgraund {
+    height: 30em;
+  }
+
+  #header h1 {
+    font-size: 3rem;
+  }
+
+  #header .banner-title-int h1 {
+    padding-top: 20px;
+  }
+
+  #header .image-backgraund-int {
+    height: 8em;
+  }
+
+  #header .logo {
+    width: 200px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 993px) {
+  .page-title {
+    padding-top: 20rem;
+  }
+
+  #header .image-backgraund {
+    background-size: 120%;
+    height: 50em;
+  }
+
+  #header .image-backgraund-int {
+    height: 13em;
+  }
+}
+
+@media (min-width: 1130px) {
+  #header .image-backgraund {
+    height: 55em;
+  }
+}
+
+@media (min-width: 1580px) {
+  #header .image-backgraund-int {
+    height: 17em;
+  }
+}
+
+/****************** white section **********************/
+#whiteSection {
+  padding: 3em 0;
+}
+
+.whiteSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 25px;
+}
+
+.whiteSection-block {
+  padding: 1em;
+}
+
+.purple {
+  background-color: var(--purple);
+  color: var(--white);
+  text-align: center;
+}
+
+.black {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+.red {
+  background-color: var(--red);
+  color: var(--white);
+  text-align: center;
+}
+
+#whiteSection .fa-solid {
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+@media (min-width: 768px) {
+  .whiteSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .whiteSection {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+  }
+}
+
+/****************** newsletter  section **********************/
+.newsletter-backgraund {
+  background: var(--basic-blue);
+  background-size: cover;
+  color: var(--white);
+  background-size: 100%;
+  height: 20em;
+  background: url(../images/Maquina.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.newsletter-block {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 25px;
+}
+
+.newsletter-block-backgraund {
+  background-color: #ffffff96;
+  margin-left: 20%;
+  height: 20em;
+  padding: 0.5em 1em;
+  color: var(--basic-blue);
+}
+
+@media (min-width: 992px) {
+  .newsletter-block {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 25px;
+  }
+
+  .newsletter-backgraund {
+    height: 30em;
+  }
+
+  .newsletter-block-backgraund {
+    height: 30em;
+    padding: 4.5em 1.5em;
+  }
+}
+
+/****************** eatBetter  section **********************/
+.eatBetter-backgraund {
+  background: var(--white);
+  background-size: cover;
+  margin-top: 518px;
+}
+
+.eatBetter-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: -690px;
+}
+
+.eatBetter-block-backgraund {
+  background: url(../images/woman-fruit.jpg) no-repeat;
+  height: 33em;
+  background-color: var(--second-grey);
+}
+
+.eatBetter-block-text {
+  background-color: var(--second-grey);
+  padding: 2em;
+}
+
+.shape-circle-red {
+  width: 45px;
+  height: 90px;
+  margin: 0em 0em 7em auto;
+  background-color: var(--red);
+  border-style: solid;
+  border-color: var(--white);
+  border-width: 12px 0px 12px 12px;
+  border-bottom-left-radius: 90px;
+  border-top-left-radius: 90px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .shape-circle-blue {
+    width: 228px;
+    height: 228px;
+    margin: -120px auto 100px 35%;
+    background-color: var(--basic-blue);
+    border: 12px solid var(--white);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .shape-circle-red {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 12px solid var(--white);
+    margin: 1em 7em 4em auto;
+  }
+
+  .eatBetter-block {
+    grid-template-columns: 1fr 1fr;
+    padding: 0em 10em;
+    margin-top: -150px;
+  }
+
+  .eatBetter-backgraund {
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+/****************  int pages  *******************/
+
+.display-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "bloque2" "bloque1";
+}
+
+main {
+  order: 1;
+  /* Cambia el orden */
+}
+
+aside {
+  order: 2;
+  /* Cambia el orden */
+}
+
+@media (min-width: 768px) {
+  .display-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+  }
+
+  main {
+    order: 2;
+    /* Cambia el orden */
+  }
+
+  aside {
+    order: 1;
+    /* Cambia el orden */
+  }
+}
+
+/************     contac page  ************/
+
+#contact h2 {
+  border-bottom: 1px solid;
+  padding-left: 1em;
+}
+
+fieldset {
+  border: solid 2px var(--second-blue);
+  border-radius: 3px;
+  margin: 20px 0px;
+}
+
+.form-grid-radio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-right: 3%;
+}
+
+legend {
+  color: var(--blue);
+}
+
+input,
+textarea,
+select {
+  border: 0;
+  padding: 8px 14px;
+  background-color: var(--second-grey);
+  border: 1px solid var(--blue);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  width: 95%;
+  margin-left: 20px;
+  font-size: 1.2em;
+  color: var(--black);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--second-blue);
+}
+
+label {
+  font-weight: normal;
+  display: block;
+  margin: 10px 0 5px 0;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.required {
+  font-size: 1.6em;
+  color: red;
+}
+
+/*checkbox*/
+.chekContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.chekContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: solid 1px var(--second-blue);
+}
+
+.sr-only {
+  display: none;
+}
+
+/* On mouse-over, add a grey background color */
+.chekContainer:hover input ~ .checkmark {
+  background-color: var(--second-blue);
+}
+
+/* When the checkbox is checked, add a blue background */
+.chekContainer input:checked ~ .checkmark {
+  background-color: var(--second-blue);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.chekContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.chekContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*radiobutton*/
+/* The container */
+.radioContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmarkRadio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--second-grey);
+  border-radius: 50%;
+  border: solid 1px var(--blue);
+}
+
+/* On mouse-over, add a grey background color */
+.radioContainer:hover input ~ .checkmarkRadio {
+  background-color: var(--second-grey);
+}
+
+/* When the radio button is checked, add a blue background */
+.radioContainer input:checked ~ .checkmarkRadio {
+  background-color: var(--second-blue);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarkRadio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioContainer input:checked ~ .checkmarkRadio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioContainer .checkmarkRadio:after {
+  border-radius: 50%;
+  background: white;
+}
+
+/**/
+.label {
+  font-weight: normal;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.radioPosition {
+  padding-left: 40%;
+  width: 50%;
+}
+
+.agreeRow {
+  padding: 30px;
+}
+
+/**/
+button#submit {
+  background-color: var(--second-blue);
+  font-size: 1.2em;
+  padding: 20px;
+  width: 100%;
+  border: var(--blue);
+  margin-bottom: 40px;
+}
+
+button#submit:hover,
+button#submit:focus {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  section.form {
+    margin: 1.5em 3em;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 3%;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+/***************** aside  *********************/
+
+aside figure img {
+  width: 100px;
+}
+
+aside figure {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+  border-bottom: 1px solid var(--blue);
+  padding-top: 5px;
+}
+
+aside figure figcaption a {
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
+aside figure figcaption a:hover,
+aside figure figcaption a:focus {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+aside figure figcaption time {
+  color: var(--dark-grey);
+  font-size: 0.8em;
+}
+
+aside nav#socialNavBar {
+  position: inherit;
+  display: flex;
+  margin-left: 0;
+  background-color: var(--third-blue);
+  border-radius: 10px;
+  padding: 5px 5px 12px 5px;
+  margin-top: 0;
+}
+
+/*****************  products  ****************/
+.products-tips {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.tips {
+  background-color: var(--red);
+  padding: 20px;
+  color: var(--white);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  /* Dos filas, la primera se ajusta al contenido, la segunda toma el espacio restante */
+  grid-template-columns: 1fr 4fr;
+  /* Dos columnas, una que ocupa 1fr y otra que ocupa 4fr */
+  gap: 20px;
+  /* Espacio entre los elementos */
+}
+
+.tips-fa {
+  grid-row: 1;
+  /* Bloque 1 en la primera fila */
+  grid-column: 1;
+  /* Bloque 1 en la primera columna */
+}
+
+.tips-title {
+  grid-row: 1;
+  /* Bloque 2 en la primera fila */
+  grid-column: 2;
+  /* Bloque 2 en la segunda columna */
+  margin: 0px;
+}
+
+.tips-text {
+  grid-row: 2;
+  /* Bloque 3 en la segunda fila */
+  grid-column: 1 / span 2;
+  /* Bloque 3 en toda la extensión de las dos columnas */
+}
+
+h3.tips-title {
+  font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+  .products-tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+/* table */
+/*  CSS table flexbox for mobile */
+caption {
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+  margin: 20px 0px 30px 0px;
+}
+
+table {
+  width: 100%;
+}
+
+table thead {
+  left: -9999px;
+  position: absolute;
+  visibility: hidden;
+}
+
+table tr {
+  border-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+table td {
+  border: 1px solid;
+  margin: 0 -1px -1px 0;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+table td:last-child {
+  padding-top: 3px;
+  padding-bottom: 0px;
+}
+
+table td::before {
+  content: attr(data-label);
+  float: left;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 5px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+}
+
+table tfoot td::before {
+  display: none;
+}
+
+tfoot tr td {
+  width: 100%;
+}
+
+th {
+  width: 100%;
+  background-color: var(--basic-blue);
+  color: var(--white);
+  padding: 10px;
+}
+
+#Supplement,
+#juices_fruits {
+  background-color: var(--blue);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+td img {
+  width: 120px;
+}
+
+@media (min-width: 768px) {
+  table tr {
+    display: revert;
+  }
+
+  table thead {
+    left: 0px;
+    position: initial;
+    visibility: visible;
+  }
+
+  table td::before {
+    display: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  table thead tr th {
+    background-color: var(--blue);
+    text-align: center;
+  }
+
+  table th {
+    width: 20%;
+  }
+
+  table td {
+    width: 30%;
+  }
+
+  table tr {
+    background: white;
+    border-bottom: 1px solid;
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--second-grey);
+  }
+
+  table th,
+  table td {
+    padding: 10px 20px;
+  }
+}
+
+/************ footer *****************/
+#footer {
+  color: var(--footer-text);
+  background-color: var(--dark-grey);
+  padding: 0.5em 0.8em;
+}
+
+#footer h2 {
+  color: var(--white);
+  text-align: center;
+  line-height: 0.5em;
+}
+
+#footer a {
+  color: var(--footer-text);
+  text-decoration: none;
+}
+
+#footer a:hover,
+#footer a:focus {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+footer .footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+footer.copyright {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.footer-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px 40px;
+}
+
+.footer-menu,
+.footer-terms {
+  text-align: right;
+}
+
+.footer-contact {
+  margin-left: 30px;
+}
+
+.copyright {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-top: 1px solid var(--white);
+}
+
+span.padding-footer-contact {
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  #footer h2 {
+    text-align: left;
+  }
+
+  footer .footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px 40px;
+  }
+
+  .footer-contact {
+    text-align: right;
+  }
+
+  footer .copyright {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  footer .copyright {
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 100px;
+  }
+}
